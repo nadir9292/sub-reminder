@@ -1,14 +1,6 @@
+import { Sub } from "@/src/types/Sub";
 import Image from "next/image";
 import React from "react";
-
-type CategorySub = "SVOD" | "GAME";
-
-type Sub = {
-  title: string;
-  logo: string;
-  prices: Array<number>;
-  category: CategorySub;
-};
 
 const listSubs: Array<Sub> = [
   {
@@ -65,12 +57,12 @@ export default function SubList() {
             width={70}
             height={70}
             alt="logo sub"
-            className="rounded-xl"
+            className="rounded-xl ml-2"
             priority
           />
           <h1 className="font-bold">{subItem.title}</h1>
-          <h1 className="ring-2 ring-gray-900 w-fit ml-8 p-2 rounded-lg italic">
-            ${subItem.prices[0]}
+          <h1 className="w-fit ml-8 p-2 rounded-lg italic">
+            {subItem.prices[0]}€
           </h1>
         </div>
       ))}
