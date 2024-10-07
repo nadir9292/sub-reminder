@@ -57,19 +57,21 @@ const listSubs: Array<Sub> = [
 
 export default function SubList() {
   return (
-    <div className="max-h-8">
+    <div className="max-h-96 overflow-auto">
       {listSubs.map((subItem) => (
-        <div className="grid grid-cols-3 bg-white my-4 py-2 px-1 items-center">
+        <div className="grid grid-cols-3 bg-white/30 backdrop-blur-lg rounded-xl  my-4 py-2 px-1 items-center shadow-lg">
           <Image
             src={subItem.logo}
-            width={50}
-            height={50}
+            width={70}
+            height={70}
             alt="logo sub"
-            className="bg-offWhite rounded-xl object-contain"
+            className="rounded-xl"
             priority
           />
-          <h1>{subItem.title}</h1>
-          <h1>${subItem.prices[0]}</h1>
+          <h1 className="font-bold">{subItem.title}</h1>
+          <h1 className="ring-2 ring-gray-900 w-fit ml-8 p-2 rounded-lg italic">
+            ${subItem.prices[0]}
+          </h1>
         </div>
       ))}
     </div>
